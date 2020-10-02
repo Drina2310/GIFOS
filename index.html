@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!--Inicio de la cabecera-->
+    <header>
+
+        <nav class="menu">
+            <div class="logo">
+                <img class="img-logo" src="./images/logo_size.jpg" alt="bd">
+            </div>
+
+            <input type="checkbox" id="menu-res">
+            <label for="menu-res"><i id="icon-burger" class="fa fa-bars"></i><i id="icon-x" class="fa fa-times"
+                    aria-hidden="true"></i></label>
+
+            <ul>
+                <li><a href="#">Modo Nocturno</a></li>
+                <hr>
+                <li><a href="#">Favoritos</a></li>
+                <hr>
+                <li><a href="#">Mis GIFOS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!--Fin de la cabecera-->
+
+    <!--Inicio del contenido-->
+    <!--Buscador-->
+    <section class="start-content">
+        <h2>Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h2>
+
+        <div class="img-friends">
+            <img class="friends" src="./images/ilustra_header.svg" alt="friends">
+        </div>
+        <div class="container-search">
+            <form role="search" method="get" id="searchform" action="">
+                <input type="text" placeholder="Busca GIFOS y más" id="s"/>
+                <label for="s">
+                    <span id="icon-search"><img src="./images/icon-search.svg" alt=""></span> 
+                    <!--<span id="icon-close"><img src="./images/close.svg" alt=""></span>-->
+                </label>
+            </form>
+        </div>        
+    </section>
+
+    <section class="trending-content">
+        <!--Preguntar si son enlaces-->
+        <h3>Trending:</h3>
+        <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+        
+        <div class="trending-gifos">
+            <h3>Trending GIFOS</h3>
+            <p>Mira los ultimos GIFOS de nuestra comunidad.</p>
+
+            <div class="img-trending">
+                <img src="./images/claro.jpg" alt="">
+            </div>
+        </div>
+    
+    </section>
+    <!--Fin del contenido-->
+    <!--Inicio del footer-->
+    <footer>
+        <div class="info-footer">
+            <p>Compartir en:</p>
+            <div class="red">
+                <a class="redes" href="https://www.facebook.com" target="_blank"><img src="./images/icon_facebook.svg" alt=""></i></a>
+                <a class="redes" href="https://twitter.com/" target="_blank"><img src="./images/icon-twitter.svg" alt=""></a>
+                <a class="redes" href="https://www.instagram.com" target="_blank"><img src="./images/icon_instagram.svg" alt=""></a>
+            </div>
+
+            <div id="hello">
+                <p><i class="fa fa-copyright" aria-hidden="true"></i> GIFOS 2020 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!--Fin del footer-->
+</body>
+
+</html>
