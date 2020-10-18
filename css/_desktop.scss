@@ -1,0 +1,171 @@
+@media screen and (min-width: 1024px){
+    header{
+        nav{
+            .logo{
+                .img-logo{
+                    width: 10vw;
+                    margin-left: 9em;
+                }
+            }
+
+            .create-button{
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                margin: 1.5em 9em 0 0;
+                background: url('../images/button-crear-gifo.svg') no-repeat;
+
+                &:hover{
+                    background: url('../images/CTA-crear-gifo-hover.svg') no-repeat;
+                }
+            }
+
+            label{
+                #icon-burger{
+                    display: none;
+                }
+            }
+
+            ul{
+                display: flex;
+                justify-content: space-evenly; 
+                background: white;
+                margin: 0 15em 0 0;
+                width: 40vw;
+                height: 10vh;
+                line-height: 10vh;
+
+                hr{
+                    display: none;
+                }
+
+                li{
+                    margin: 0;
+                    a{
+                        color:#572EE5;
+                    }
+                }
+               
+            }
+
+        }
+    }
+
+    .start-content{
+        h2{
+            font-size: 2.2em;
+            margin: 2em 9em 1em;
+            line-height: 15vh;
+        }
+    
+        .img-friends{
+            
+            .friends{
+                width: 40vw;
+            }
+        }
+    
+        .container-search{
+            #search{
+                width: 50%;
+
+                #autocomplete-input{
+                    width: 83%;
+                }                
+            }
+        }
+    }
+    
+    #trending-content{
+        margin-top: 4em;
+    
+        p{
+            margin-bottom: 4em;
+        }
+
+        #show-gifts{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            .class-gif{
+                .img-gif{
+                    width: 260px;
+                    height: 200px;
+                }
+            }
+        }
+        
+        .trending-gifos{
+            p{
+                margin-left: 15em;
+            }
+            .slider-gifos{
+                display: flex;
+                justify-content: space-evenly;
+
+                #slider-left{
+                    display: inline-block;
+                    margin-top: 4.5em;
+                    width: 40px;
+                    height: 40px;
+                    background: url('../images/button-slider-left.svg') no-repeat;
+        
+                    &:hover{
+                        background: url('../images/button-slider-left-hover.svg') no-repeat;
+                    }
+                }
+        
+                #slider-rigth{
+                    display: inline-block;
+                    margin-top: 4.5em;
+                    width: 40px;
+                    height: 40px;
+                    background: url('../images/Button-Slider-right.svg') no-repeat;
+        
+                    &:hover{
+                        background: url('../images/Button-Slider-right-hover.svg') no-repeat;
+                    }
+                }
+                
+            }
+        }
+        
+    }
+
+    footer{
+        .info-footer{
+            display: flex;
+            justify-content: start;
+
+            p{
+                margin-left: 9em;
+            }
+
+            .red{
+                margin: 0 25em 0 2em;
+        
+                .red1{
+                    width: 2vw;
+                    &:hover{
+                        background: url('../images/icon_facebook_hover.svg') no-repeat;
+                    }                   
+                }
+                .red2{
+                    width: 3vw;
+                    &:hover{
+                        background: url('../images/icon-twitter-hover.svg') no-repeat;
+                    }                   
+                }
+                .red3{
+                    &:hover{
+                        background: url('../images/icon_instagram-hover.svg') no-repeat;
+                    }                   
+                }
+                
+            }
+        }  
+    }
+}
+
+
+

@@ -18,22 +18,26 @@
     <!--Inicio de la cabecera-->
     <header>
 
-        <nav class="menu">
+        <nav>
             <div class="logo">
                 <img class="img-logo" src="./images/logo_size.jpg" alt="bd">
             </div>
 
-            <input type="checkbox" id="menu-res">
-            <label for="menu-res"><i id="icon-burger" class="fa fa-bars"></i><i id="icon-x" class="fa fa-times"
-                    aria-hidden="true"></i></label>
+            <div class="menu">
+                <input type="checkbox" id="menu-res">
+                <label for="menu-res"><i id="icon-burger" class="fa fa-bars"></i><i id="icon-x" class="fa fa-times"
+                        aria-hidden="true"></i></label>
+                
+                <ul>
+                    <li><a href="#">Modo Nocturno</a><hr></li>
+                   
+                    <li><a href="#">Favoritos</a><hr></li>
+                   
+                    <li><a href="#">Mis GIFOS</a></li>
+                </ul>
+            </div>
 
-            <ul>
-                <li><a href="#">Modo Nocturno</a></li>
-                <hr>
-                <li><a href="#">Favoritos</a></li>
-                <hr>
-                <li><a href="#">Mis GIFOS</a></li>
-            </ul>
+            <div class="create-button"></div>
         </nav>
 
     </header>
@@ -48,27 +52,39 @@
             <img class="friends" src="./images/ilustra_header.svg" alt="friends">
         </div>
         <div class="container-search">
-            <form role="search" method="get" id="searchform" action="">
-                <input type="text" placeholder="Busca GIFOS y más" id="s"/>
-                <label for="s">
-                    <span id="icon-search"><img src="./images/icon-search.svg" alt=""></span> 
-                    <!--<span id="icon-close"><img src="./images/close.svg" alt=""></span>-->
-                </label>
-            </form>
+            <div id="search">
+                <form>
+                    <label for="autocomplete-input">
+                        <span><img id="search-img" src="./images/icon-search.svg" alt=""></span> 
+                        <!--<span id="icon-close"><img src="./images/close.svg" alt=""></span>-->
+                    </label>
+                    <input type="text" id="autocomplete-input" placeholder="Busca GIFOS y más"/>
+                    <label for="autocomplete-input">
+                        <span><img id="search-img-close" src="./images/icon-search.svg" alt=""></span> 
+                        <!--<span id="icon-close"><img src="./images/close.svg" alt=""></span>-->
+                    </label>
+                </form>
+                <div id="show-results">
+                    <ul id="results-ul"></ul>
+                </div>
+            </div>
         </div>        
     </section>
 
-    <section class="trending-content">
-        <!--Preguntar si son enlaces-->
+    <section id="trending-content">
         <h3>Trending:</h3>
         <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
-        
+
+        <div id="show-gifts">
+        </div>        
         <div class="trending-gifos">
             <h3>Trending GIFOS</h3>
             <p>Mira los ultimos GIFOS de nuestra comunidad.</p>
 
-            <div class="img-trending">
-                <img src="./images/claro.jpg" alt="">
+            <div class="slider-gifos">
+                <div id="slider-left"></div>
+                <div id="img-trending"></div>
+                <div id="slider-rigth"></div>
             </div>
         </div>
     
@@ -78,18 +94,20 @@
     <footer>
         <div class="info-footer">
             <p>Compartir en:</p>
-            <div class="red">
-                <a class="redes" href="https://www.facebook.com" target="_blank"><img src="./images/icon_facebook.svg" alt=""></i></a>
-                <a class="redes" href="https://twitter.com/" target="_blank"><img src="./images/icon-twitter.svg" alt=""></a>
-                <a class="redes" href="https://www.instagram.com" target="_blank"><img src="./images/icon_instagram.svg" alt=""></a>
+            <div class="red">               
+                <a href="https://www.facebook.com" target="_blank"><span class="red1"></span></a>
+                <a href="https://twitter.com/" target="_blank"><span class="red2"></span></a>
+                <a href="https://www.instagram.com" target="_blank"><span class="red3"></span></a>
             </div>
 
-            <div id="hello">
+            <div class="copy">
                 <p><i class="fa fa-copyright" aria-hidden="true"></i> GIFOS 2020 All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     <!--Fin del footer-->
+
+    <script src="./js/gifos.js"></script>
 </body>
 
 </html>
