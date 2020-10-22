@@ -145,15 +145,16 @@ header nav {
     color: #572EE5;
     text-align: center;
     line-height: 25px;
-    margin: 0 7em; }
+    margin: 0 7em;
+    text-transform: capitalize; }
   #trending-content #show-gifts {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
-    #trending-content #show-gifts .class-gif {
-      margin: 0 auto; }
-      #trending-content #show-gifts .class-gif .img-gif {
-        width: 156px;
-        height: 120px; }
+    #trending-content #show-gifts .card-gif {
+      margin: 0 auto;
+      width: 156px; }
+      #trending-content #show-gifts .card-gif .img-gif {
+        max-width: 100%; }
   #trending-content .more-btn {
     display: flex;
     justify-content: center; }
@@ -183,11 +184,10 @@ header nav {
     #trending-content .trending-gifos .slider-gifos #img-trending {
       display: grid;
       grid-template-columns: repeat(3, 1fr); }
-      #trending-content .trending-gifos .slider-gifos #img-trending .class-gif {
-        margin: 0 1em; }
-        #trending-content .trending-gifos .slider-gifos #img-trending .class-gif .img-gif {
-          width: 243px;
-          height: 187px; }
+      #trending-content .trending-gifos .slider-gifos #img-trending .card-gif {
+        width: 243px; }
+        #trending-content .trending-gifos .slider-gifos #img-trending .card-gif .img-gif {
+          max-width: 100%; }
     #trending-content .trending-gifos .slider-gifos #slider-left {
       display: none; }
     #trending-content .trending-gifos .slider-gifos #slider-rigth {
@@ -281,15 +281,33 @@ footer .info-footer {
       margin-bottom: 4em; }
     #trending-content #show-gifts {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); }
-      #trending-content #show-gifts .class-gif .img-gif {
-        width: 260px;
-        height: 200px; }
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 5px 10px; }
+      #trending-content #show-gifts .card-gif {
+        width: 260px; }
+        #trending-content #show-gifts .card-gif .img-gif {
+          max-width: 100%; }
     #trending-content .trending-gifos p {
       margin-left: 15em; }
     #trending-content .trending-gifos .slider-gifos {
       display: flex;
       justify-content: space-evenly; }
+      #trending-content .trending-gifos .slider-gifos #img-trending .card-gif {
+        width: 300px; }
+        #trending-content .trending-gifos .slider-gifos #img-trending .card-gif .img-gif:hover {
+          background-color: #572EE5;
+          opacity: 0.6; }
+        #trending-content .trending-gifos .slider-gifos #img-trending .card-gif .icons {
+          display: inline-block;
+          margin-top: 4.5em;
+          width: 40px;
+          height: 40px; }
+        #trending-content .trending-gifos .slider-gifos #img-trending .card-gif .icon-fav {
+          background: url("../images/icon-fav.svg") no-repeat; }
+        #trending-content .trending-gifos .slider-gifos #img-trending .card-gif .icon-dow {
+          background: url("../images/icon-download.svg") no-repeat; }
+        #trending-content .trending-gifos .slider-gifos #img-trending .card-gif .icon-max {
+          background: url("../images/icon-max-normal.svg") no-repeat; }
       #trending-content .trending-gifos .slider-gifos #slider-left {
         display: inline-block;
         margin-top: 4.5em;

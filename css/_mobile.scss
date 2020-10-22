@@ -231,6 +231,7 @@ header{
         text-align: center;
         line-height: 25px;
         margin: 0 7em;
+        text-transform: capitalize;
 
     }
 
@@ -238,11 +239,11 @@ header{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
 
-        .class-gif{
+        .card-gif{
             margin: 0 auto;
+            width: 156px;
             .img-gif{
-                width: 156px;
-                height: 120px;
+                max-width: 100%;
             }
         }
     }
@@ -284,11 +285,10 @@ header{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 
-                .class-gif{
-                    margin: 0 1em;
+                .card-gif{
+                    width: 243px;
                     .img-gif{
-                        width: 243px;
-                        height: 187px;
+                        max-width: 100%;                        
                     }
                 }
             }

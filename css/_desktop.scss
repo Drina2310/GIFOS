@@ -86,12 +86,14 @@
         #show-gifts{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px 10px;
 
-            .class-gif{
+            .card-gif{
+                width: 260px;
                 .img-gif{
-                    width: 260px;
-                    height: 200px;
+                    max-width: 100%;
                 }
+                
             }
         }
         
@@ -102,6 +104,36 @@
             .slider-gifos{
                 display: flex;
                 justify-content: space-evenly;
+
+                #img-trending{
+                    .card-gif{
+                        width: 300px;
+                        .img-gif{
+                            &:hover {                                
+                                background-color: #572EE5;
+                                opacity: 0.6;
+                            }            
+                        }
+                        
+                        .icons{
+                            display: inline-block;
+                            margin-top: 4.5em;
+                            width: 40px;
+                            height: 40px;
+                        }
+
+                        .icon-fav{
+                            background: url('../images/icon-fav.svg') no-repeat;
+                        }
+                        .icon-dow{
+                            background: url('../images/icon-download.svg') no-repeat;
+                        }
+                        .icon-max{
+                            background: url('../images/icon-max-normal.svg') no-repeat;
+                        }
+                        
+                    } 
+                }
 
                 #slider-left{
                     display: inline-block;
