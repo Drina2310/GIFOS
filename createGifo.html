@@ -20,7 +20,7 @@
 
         <nav>
             <div class="logo">
-                <img class="img-logo" src="./images/logo_size.jpg" alt="bd">
+                <a title="logo" href="index.html"><img class="img-logo" src="./images/logo_size.jpg" alt="logo"></a>
             </div>
 
             <div class="menu">
@@ -28,36 +28,59 @@
                 <label for="menu-res"><i id="icon-burger" class="fa fa-bars"></i><i id="icon-x" class="fa fa-times"
                         aria-hidden="true"></i></label>
                 
-                <ul>
-                    <li><a href="#">Modo Nocturno</a><hr></li>
-                   
-                    <li><a href="favoritos.html">Favoritos</a><hr></li>
-                   
-                    <li><a href="#">Mis GIFOS</a></li>
+                <ul id="container-ul">
+                    <li class="list"><a href="#">Modo Nocturno</a><hr></li>
+                    
+                    <li class="list"><a href="favourite.html">Favoritos</a><hr></li>
+                    
+                    <li class="list"><a href="myGifos.html">Mis GIFOS</a></li>
                 </ul>
             </div>
 
-            <div class="create-button"></div>
+            <a class="active" href="createGifo.html"><div class="create-button"></div></a>
         </nav>
 
     </header>
     <!--Fin de la cabecera-->
 
-    <section id="trending-content">
-                
-        <div class="trending-gifos">
-            <h3>Trending GIFOS</h3>
-            <p>Mira los ultimos GIFOS de nuestra comunidad.</p>
-
-            <div class="slider-gifos">
-                <div id="slider-left"></div>
-                <div id="img-trending"></div>
-                <div id="slider-rigth"></div>
+    <div id="container-create-gifos">
+        
+        <div class="rectangle">
+            <div class="top">
+                <div class="square one"></div>
+                <div class="square two"></div>
+            </div>
+            <div class="container-text">
+                <div class="text">
+                    <h2>Aquí podrás <br> crear tus propios <span>GIFOS</span></h2>
+                    <p>¡Crea tu propio GIFO en sólo 3 pasos!</p> 
+                    <p>(sólo necesitas una cámara para grabar un video)</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="square three"></div>
+                <div class="square four"></div>
             </div>
         </div>
+    </div>
+    <div class="camera">
+        <img src="./images/camara.svg" alt="camera">
+        <img src="./images/element-luz-camara.svg" alt="luz">
+    </div>
+    <div id="container-numbers">
+        <div class="numbers">
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+        </div>
+    </div>
+    <div class="movie">
+        <img class="img-movie" src="./images/pelicula.svg" alt="movie">
+    </div>
+    <div class="line"></div>
+   
+    <button class="btn">COMENZAR</button>
     
-    </section>
-    <!--Fin del contenido-->
     <!--Inicio del footer-->
     <footer>
         <div class="info-footer">
@@ -75,7 +98,7 @@
     </footer>
     <!--Fin del footer-->
 
-    <script src="./js/prueba.js"></script>
+    <script type="module" src="./js/createGifos.js"></script>
 </body>
 
 </html>

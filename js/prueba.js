@@ -1,50 +1,10 @@
-//1.-TRENDING GIFOS
-const apiKey = '2vUSUsXDFZ8nbgW1TgoYgUc72lFoiyFV';
-const div_gifos = document.getElementById('img-trending');
+import { listGifs } from './listGifs.js'
 
-//a) OBTENER GIF EN TRENDING
-async function getGif(numberOfGifs){
-    let url = `http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${numberOfGifs}`;
-    const response = await fetch(url);
-    const dataJson = await response.json();
-    
-    //console.log(dataJson.data);
-    listGifs(dataJson.data, div_gifos);
+import { getGif } from './trending.js'
 
-}
+const apiKey = '2vUSUsXDFZ8nbgW1TgoYgUc72lFoiyFV'
 
-//b) lISTADO DE LAS GIFS
-function listGifs(gifos, divGifo){
-    try{
-        gifos.map((gif, i) => {
-            let divgif = document.createElement('div')
-            divgif.className = 'card-gif'
-            let gifElm = document.createElement('img')
-            gifElm.className = 'img-gif'
-            gifElm.setAttribute('src', gifos[i].images.fixed_height_downsampled.url)
-            divGifo.appendChild(divgif)
-            divgif.appendChild(gifElm)
-
-            let divIcons = document.createElement('div')
-            divIcons.className = 'icons-gif'
-            let divIconFav = document.createElement('div')
-            divIconFav.className = 'icons icon-fav'
-            let divIconDow = document.createElement('div')
-            divIconDow.className = 'icons icon-dow'
-            let divIconMax = document.createElement('div')
-            divIconMax.className = 'icons icon-max'
-
-            divgif.appendChild(divIcons)
-            divIcons.appendChild(divIconFav)
-            divIcons.appendChild(divIconDow)
-            divIcons.appendChild(divIconMax)
-    })
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-getGif(3);
+getGif(3)
 
 //2.-BARRA DE BUSQUEDA 
 const ulShow = document.querySelector('#results-ul')
@@ -52,10 +12,9 @@ const inputSearch = document.querySelector('#autocomplete-input')
 const search_img_close = document.querySelector('#search-img-close')
 const search_img = document.querySelector('#search-img')
 const div_show_results = document.querySelector('#show-results')
-const div_noResult = document.getElementById('no-result')
 const div_show_gifos = document.getElementById('show-gifts');
 const form_search = document.querySelector('#search-form')
-
+let divTitle = document.querySelector('#title-h2')
 
 // a) User escribe en el input
 inputSearch.addEventListener('keyup', async (ev) => {
@@ -67,8 +26,8 @@ inputSearch.addEventListener('keyup', async (ev) => {
    
     if (inputSearch.value.length === 0) {
         ulShow.innerHTML = ""
-        search_img_close.src = "../images/icon-search.svg"
-        search_img.style.visibility = "hidden"
+        changeIcons()
+        divBtn.classList.remove('more-btn')
     }
 
     if (inputSearch.value.length >= 1) {
@@ -83,15 +42,30 @@ inputSearch.addEventListener('keyup', async (ev) => {
     }
 })
 
+//Evento click en la X
+search_img_close.addEventListener('click', () => {
+    ulShow.innerHTML = ""
+    inputSearch.value = ""
+    div_ouch.innerHTML = ""
+    divTitle.innerHTML = ""
+    divBtn.classList.remove('more-btn')
+    div_show_results.classList.remove("mystyle")
+    changeIcons()
+} )
+
 //Evento submit
 form_search.addEventListener('submit', async (e) => {
     e.preventDefault()
-    ulShow.innerHTML = ""//OJO PREGUNTAR NO BORRA EL UL, ESTOY SOBREESCRIBIENDO LOS EVENTOS
+    ulShow.innerHTML = ""
     div_show_gifos.innerHTML = ""
+    divTitle.innerHTML = ""
+    div_ouch.innerHTML = ""
+    div_show_results.classList.remove("mystyle");
+    changeIcons()
+    appendTitle()
     const result = await getSearch(inputSearch.value, 0) 
         
 })
-
 
 // b) Busco la data en el API
 async function getDataAutocomplete(value){    
@@ -102,7 +76,7 @@ async function getDataAutocomplete(value){
 
     return data
 }
-    
+
 // c) Muestro en el autocomplete la data
 // data = ['mascota', 'mama', 'martes']
 const showAutocomplete = data => {
@@ -118,9 +92,10 @@ const showAutocomplete = data => {
         li.addEventListener('click', (ev) => {
             ulShow.innerHTML = ""
             div_show_gifos.innerHTML = ""
+            divTitle.innerHTML = ""
+            div_ouch.innerHTML = ""
             inputSearch.value = ev.currentTarget.getAttribute('data-name')
-            search_img_close.src = "../images/icon-search.svg"
-            search_img.style.visibility = "hidden"
+            changeIcons()
             div_show_results.classList.remove("mystyle");
             
             appendTitle()
@@ -134,22 +109,20 @@ const showAutocomplete = data => {
 
 //d) Busqueda de las gifs
 async function getSearch(search, paginado){
-    console.log(search)
+    //console.log(search)
     let url = `http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=12&offset=${paginado}`
     const response = await fetch(url)
     const dataJson = await response.json()
     
-    //console.log(dataJson.data) 
+    console.log(dataJson.data) 
     if (dataJson.data.length === 0){
         ulShow.innerHTML = ""
-        appendTitle()
+        div_ouch.innerHTML = ""
         appendOuch()
-        //let btn = showMoreBtn()NO ME SIRVE PARA OCULTAR EL BOTONs
-        //btn.style.display = 'none'
+        divBtn.classList.remove('more-btn')
         
     } else {
         listGifs(dataJson.data, div_show_gifos)
-        console.log("aca")
         showMoreBtn()
     }
     
@@ -173,33 +146,31 @@ getSearchTermsTrendings()
 const appendTitle = () => {
     const title_h2 = document.createElement('h2')
     const str = inputSearch.value
-    title_h2.append(str)            
-    div_show_gifos.before(title_h2)
+    title_h2.append(str)  
+    divTitle.appendChild(title_h2)
     const hr = document.createElement('hr')
-    title_h2.before(hr)
+    title_h2.before(hr)  
 }
 
+let div_ouch = document.querySelector('#ouch')
 const appendOuch = () => {
+    const img_ouch = document.createElement('img')
+    img_ouch.src = '../images/icon-busqueda-sin-resultado.svg'
+    div_ouch.appendChild(img_ouch)
+
     const title_h4 = document.createElement('h4')
     const str_h3 = "Intenta con otra búsqueda"
     title_h4.append(str_h3)
-    div_show_gifos.before(title_h4)
-
-    const div_ouch = document.createElement('div')//si result.data === 0 hacer este codigo
-    div_ouch.setAttribute('id', 'ouch')
-    const div_img = document.createElement('img')
-    div_img.src = '../images/icon-busqueda-sin-resultado.svg'
-    title_h4.before(div_ouch)
-    div_ouch.appendChild(div_img)
-    divList = div_ouch
+    div_ouch.appendChild(title_h4)
+    
 }
 
 const createMoreBtn = () => {
     const divBtn = document.createElement('div')
-    divBtn.classList.add('more-btn');
+    divBtn.classList.add('more-btn')
     const moreBtn = document.createElement('button')
-    moreBtn.type = 'button'; 
-    moreBtn.innerText = 'VER MÁS'; 
+    moreBtn.type = 'button'
+    moreBtn.innerText = 'VER MÁS'
     div_show_gifos.after(divBtn)
     divBtn.appendChild(moreBtn)
 
@@ -218,7 +189,11 @@ const showMoreBtn = () => {
     moreBtn.addEventListener('click', () => {  
         console.log(pag)    
         pag += 12
-        getSearch(inputSearch.value, pag)  
-        console.log("Hola")            
+        getSearch(inputSearch.value, pag)             
     })
+}
+
+const changeIcons = () => {
+    search_img_close.src = "../images/icon-search.svg"
+    search_img.style.visibility = "hidden"
 }

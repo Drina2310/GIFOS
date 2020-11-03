@@ -106,7 +106,7 @@ header{
         font-size: 1.56rem;
         color: #572EE5;
         text-align: center;
-        line-height: 7vh;
+        line-height: 12vh;
 
         span{
             color: #50E3C2;
@@ -179,6 +179,36 @@ header{
     }  
     
 }
+.more-btn{
+    display: flex;
+    justify-content: center;
+
+    button{
+        width: 127px;
+        height: 50px;
+        margin-top: 5em;
+        border: 1px solid #572EE5;
+        border-radius: 25px;
+        background: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        color: #572EE5;
+        
+    }
+}
+
+.card-gif{
+    margin: 0 auto;
+    width: 156px;
+
+    .img-gif{
+        max-width: 100%;
+    }
+
+    .icons-gif{
+        display: none;
+    }
+}
 
 #trending-content{
     margin-top: 2em;
@@ -234,36 +264,12 @@ header{
         text-transform: capitalize;
 
     }
-
+   
     #show-gifts{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-
-        .card-gif{
-            margin: 0 auto;
-            width: 156px;
-            .img-gif{
-                max-width: 100%;
-            }
-        }
-    }
-
-    .more-btn{
-        display: flex;
-        justify-content: center;
-
-        button{
-            width: 127px;
-            height: 50px;
-            margin-top: 5em;
-            border: 1px solid #572EE5;
-            border-radius: 25px;
-            background: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            color: #572EE5;
-            
-        }
+        justify-items: center;
+        align-items: center;
     }
 
     .trending-gifos{
@@ -287,6 +293,7 @@ header{
                 
                 .card-gif{
                     width: 243px;
+
                     .img-gif{
                         max-width: 100%;                        
                     }
@@ -324,6 +331,48 @@ header{
     }
 }
 
+#favourite{
+    margin-top: 1em;
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+    h3{
+        padding-top: 1em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.25rem;  
+        color: #572EE5;
+        text-align: center;
+    }
+}
+#show-gifts-favs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2.5em;
+    grid-gap: 15px 5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.no-favs{
+    .img-nofavs{
+        display: block;
+        margin: 0 auto;
+    }
+    h3{
+        margin: 0 auto;
+        margin-top: 1em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        color:  #50E3C2;
+        text-align: center;
+        line-height: 25px; 
+        width: 320px;
+        
+    }
+}
 footer{
     .info-footer{
         margin-top: 2em;
