@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+body{
+    transition: .3s ease all;
+
+    &.dark{
+        background: $grayDarkM;
+    }
+}
+
 header{
 
     nav{
@@ -10,13 +18,21 @@ header{
         justify-content: space-between;
         width: 100vw;
         line-height: 5vh;
-        border-top: 5px solid #572EE5;
+        border-top: 5px solid $blue;
+
+        body.dark & {
+            border-top: 5px solid $black;
+        }
 
         .logo{
            .img-logo{
-               width: 20vw;
-               margin-left: 0.8em;
+               width: 15vw;
+               margin: 1em;
            }
+        }
+
+        .menu{
+            margin-left: auto;
         }
 
         .create-button{
@@ -48,7 +64,11 @@ header{
         
             #icon-burger{
                 font-size: 1.2rem;   
-                color: #572EE5;
+                color: $blue;
+
+                body.dark & {
+                    color: $white;
+                }
             }
         }
 
@@ -62,7 +82,11 @@ header{
                 #icon-x{
                     display: block;
                     font-size: 1.18rem;
-                    color: #572EE5;
+                    color: $blue;
+
+                    body.dark & {
+                        color: $white;
+                    }
                 }
             }
         }
@@ -71,7 +95,11 @@ header{
             margin-top: 2em;
             width: 100vw;
             height: 100vh;            
-            background:rgba(87,46,229,0.90);
+            background: $sombraBlue;
+
+            body.dark & {
+                background: $black;
+            }
 
             li{
                 display: block;
@@ -83,18 +111,20 @@ header{
                 hr{
                     width: 13%;
                     margin: 0 auto;
-                    background-color: white;
+                    background-color: $white;
                     opacity: 0.5;
                     margin-top: 0.8em;
                 }
                 
                 a{
                     text-decoration: none;
-                    color: white;
-                    
+                    color: $white;
                 }
             }
         }
+    }
+    #light-mode{
+        display: none;
     }
 }
 
@@ -104,12 +134,15 @@ header{
         margin: 0.5em 2.5em 1.5em;
         font-family: 'Montserrat', sans-serif;
         font-size: 1.56rem;
-        color: #572EE5;
+        color: $blue;
         text-align: center;
-        line-height: 12vh;
+        line-height: 8vh;
 
+        body.dark & {
+            color: $white;
+        }
         span{
-            color: #50E3C2;
+            color: $turquoise;
         }
     }
 
@@ -127,13 +160,23 @@ header{
             margin: 0 auto;
             padding:0.5em;
             border-radius: 1.5em;
-            border: 0.1em solid #572EE5;
+            border: 0.1em solid $blue;
             width: 80%;
+
+            body.dark & {
+                border: 0.1em solid $white;
+            }
 
             #search-img{
                 visibility: hidden;
                 margin-left: 1em;
                 opacity: 0.3;
+                width: 18px;
+                height: 18px;
+
+                body.dark & {
+                    content: url("../images/icon-search-mod-noc.svg");
+                }
             }
 
             #show-results{
@@ -144,11 +187,20 @@ header{
                         margin: 0.5em;
                         font-family: 'Roboto', sans-serif;
                         font-size: 1em;
-                        color:#572EE5;
+                        color: $blueGray;
+                        
+                        body.dark & {
+                            color: $white;
+                        }
 
                         img{
-                            width: 15.8px;
+                            width: 15px;
                             margin-right: 1em;
+                            opacity: 0.6;
+
+                            body.dark & {
+                                content: url("../images/icon-search-mod-noc.svg");
+                            }
                         }
                         
                     }
@@ -157,7 +209,7 @@ header{
 
             .mystyle{
                 opacity: 0.5;
-                border-top: 1px solid #9CAFC3;  
+                border-top: 1px solid $blueGray;  
                 width: 90%;
                 margin: 0 auto;      
             }
@@ -167,12 +219,29 @@ header{
                 margin-left: 0.5em;
                 line-height: 5vh;
                 border: none;
-                font-family:  'Roboto', sans-serif;
-                font-size: 1rem;
-                color: #000000;
+                text-transform: capitalize;
+                       
+                body.dark & {
+                    background: $grayDarkM;
+                    color: $white;
+                }
 
                 &:focus{
                     outline: none;
+                }
+            }
+
+            input::placeholder {
+                font-family: Roboto-Regular;
+                font-size: 16px;
+                color: $blueGray;
+                text-align: left;
+            }
+
+            #search-img-close{
+
+                body.dark & {
+                    content: url("../images/icon-search-mod-noc.svg");
                 }
             }
         }
@@ -187,12 +256,19 @@ header{
         width: 127px;
         height: 50px;
         margin-top: 5em;
-        border: 1px solid #572EE5;
+        border: 1px solid $blue;
         border-radius: 25px;
-        background: white;
+        background: $white;
         font-family: 'Montserrat', sans-serif;
         font-size: 13px;
-        color: #572EE5;
+        color: $blue;
+
+        body.dark & {
+            background: $grayDarkM;
+            border: 1px solid $white;
+            color: $white;
+        }
+        
         
     }
 }
@@ -216,9 +292,13 @@ header{
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 1rem;
-        color: #572EE5;
+        color: $blue;
         text-align: center;
         line-height: 25px;
+
+        body.dark & {
+            color: $white;
+        }
     }
 
     h4{
@@ -226,7 +306,7 @@ header{
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 1rem;
-        color:  #50E3C2;
+        color: $turquoise;
         text-align: center;
         line-height: 25px; 
     }
@@ -234,7 +314,7 @@ header{
     hr{
         width: 40%;
         margin: 0 auto;
-        background-color: #9CAFC3;
+        background-color: $blueGray;
         opacity: 0.5;
         margin-top: 2.18em;
     }
@@ -248,20 +328,28 @@ header{
         font-family: 'Montserrat', sans-serif;
         font-size: 1.5em;
         margin: 2em 0 1.6em;
-        color: #572EE5;
+        color: $blue;
         text-align: center;
         line-height: 40px;
         text-transform: capitalize;
-       }
+
+        body.dark & {
+            color: $white;
+        }
+    }
 
     p{
         font-family: 'Montserrat', sans-serif;;
         font-size: 0.8rem;
-        color: #572EE5;
+        color: $blue;
         text-align: center;
         line-height: 25px;
         margin: 0 7em;
         text-transform: capitalize;
+
+        body.dark & {
+            color: $white;
+        }
 
     }
    
@@ -275,7 +363,7 @@ header{
     .trending-gifos{
         margin-top: 3em;
         padding-bottom: 3em;
-        background: #F3F5F8;
+        background: $whiteGray;
         overflow-y: scroll;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -283,6 +371,10 @@ header{
         &::-webkit-scrollbar { /* WebKit */
             width: 0;
             height: 0;
+        }
+
+        body.dark & {
+            background: $grayDark;
         }
 
         .slider-gifos{
@@ -314,14 +406,14 @@ header{
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
             font-size: 1.25rem;  
-            color: #572EE5;
+            color: $blue;
             text-align: center;
         }
 
         p{
             font-family: 'Roboto', sans-serif;
             font-size: 1rem;
-            color: #000000;
+            color: $black;
             text-align: center;
             line-height: 23px;
             width: 60vw;
@@ -342,7 +434,7 @@ header{
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 1.25rem;  
-        color: #572EE5;
+        color: $blue;
         text-align: center;
     }
 }
@@ -366,24 +458,36 @@ header{
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 1rem;
-        color:  #50E3C2;
+        color: $turquoise;
         text-align: center;
         line-height: 25px; 
         width: 320px;
         
     }
 }
+
+#myModal{
+    display: none;
+}
 footer{
     .info-footer{
         margin-top: 2em;
         text-align: center;
-        border-bottom: 5px solid #572EE5;
+        border-bottom: 5px solid $blue;
+
+        body.dark & {
+            border-bottom: 5px solid $black;
+        }
 
         p{
             font-family: 'Roboto', sans-serif;
             font-size: 0.9rem;
-            color: #000000;
+            color: $black;
             margin-bottom: 1em;
+
+            body.dark & {
+                color: $white;
+            }
         }
 
         .red{

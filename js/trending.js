@@ -6,7 +6,7 @@ const div_gifos = document.getElementById('img-trending');
 
 //a) OBTENER GIF EN TRENDING
 export async function getGif(numberOfGifs){
-    let url = `http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${numberOfGifs}`;
+    let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${numberOfGifs}`;
     const response = await fetch(url);
     const dataJson = await response.json();
 

@@ -18,7 +18,6 @@ let divTitle = document.querySelector('#title-h2')
 
 // a) User escribe en el input
 inputSearch.addEventListener('keyup', async (ev) => {
-    console.log(inputSearch.value)
     if (ev.which === 13) { 
         ulShow.innerHTML = ""
         return          
@@ -110,7 +109,7 @@ const showAutocomplete = data => {
 //d) Busqueda de las gifs
 async function getSearch(search, paginado){
     //console.log(search)
-    let url = `http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=12&offset=${paginado}`
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${search}&limit=12&offset=${paginado}`
     const response = await fetch(url)
     const dataJson = await response.json()
     
@@ -131,7 +130,7 @@ async function getSearch(search, paginado){
 
 const trendingSearch = document.querySelector("#trending-search")
 const getSearchTermsTrendings = async () => {
-    let url = `http://api.giphy.com/v1/trending/searches?api_key=${apiKey}`
+    let url = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`
     const response = await fetch(url)
     const terms = await response.json()
     //console.log(terms.data)

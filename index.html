@@ -20,7 +20,7 @@
 
         <nav>
             <div class="logo">
-                <a title="logo" href="index.html"><img class="img-logo" src="./images/logo_size.jpg" alt="logo"></a>
+                <a title="logo" href="index.html"><img class="img-logo" src="./images/logo1.jpg" alt="logo"></a>
             </div>
 
             <div class="menu">
@@ -29,7 +29,7 @@
                         aria-hidden="true"></i></label>
                 
                 <ul id="container-ul">
-                    <li class="list"><a href="#">Modo Nocturno</a><hr></li>
+                    <li class="list"><a class="night-mode" href="#">Modo Nocturno</a><a id="light-mode" class="night-mode" href="#">Modo Diurno</a><hr></li>
                    
                     <li class="list"><a href="favourite.html">Favoritos</a><hr></li>
                    
@@ -55,12 +55,12 @@
             <div id="search">
                 <form id="search-form">
                     <label for="autocomplete-input">
-                        <span><img id="search-img" src="./images/icon-search.svg" alt=""></span> 
+                        <span><img id="search-img" src="./images/icon-search.svg" alt="search"></span> 
                         <!--<span id="icon-close"><img src="./images/close.svg" alt=""></span>-->
                     </label>
                     <input type="text" id="autocomplete-input" placeholder="Busca GIFOS y más" required autocomplete="off"/>
                     <label for="autocomplete-input">
-                        <span><img id="search-img-close" src="./images/icon-search.svg" alt=""></span> 
+                        <span><img id="search-img-close" src="./images/icon-search.svg" alt="search"></span> 
                         <!--<span id="icon-close"><img src="./images/close.svg" alt=""></span>-->
                     </label>
                 </form>
@@ -91,6 +91,18 @@
         </div>
     
     </section>
+    <!--Modal-->
+    <div id="myModal" class = "modal">
+        <span class="close">&times;</span>
+        <img src= "#" class="modal-content" id="imgModal" alt="image-max">
+        <div id="caption">
+            <div>
+                <p id="user"></p>
+                <p id="title"></p>
+            </div>
+            <div class="content-icons"></div>
+        </div>
+    </div>
     <!--Fin del contenido-->
     <!--Inicio del footer-->
     <footer>
@@ -109,6 +121,7 @@
     </footer>
     <!--Fin del footer-->
     <script type="module" src="./js/prueba.js"></script>
+    <script type="module" src="./js/nightMode.js"></script>
 </body>
 
 </html>

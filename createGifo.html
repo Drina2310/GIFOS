@@ -20,7 +20,7 @@
 
         <nav>
             <div class="logo">
-                <a title="logo" href="index.html"><img class="img-logo" src="./images/logo_size.jpg" alt="logo"></a>
+                <a title="logo" href="index.html"><img class="img-logo" src="./images/logo1.jpg" alt="logo"></a>
             </div>
 
             <div class="menu">
@@ -29,7 +29,7 @@
                         aria-hidden="true"></i></label>
                 
                 <ul id="container-ul">
-                    <li class="list"><a href="#">Modo Nocturno</a><hr></li>
+                    <li class="list"><a class="night-mode" href="#">Modo Nocturno</a><a id="light-mode" class="night-mode" href="#">Modo Diurno</a><hr></li>
                     
                     <li class="list"><a href="favourite.html">Favoritos</a><hr></li>
                     
@@ -50,11 +50,11 @@
                 <div class="square one"></div>
                 <div class="square two"></div>
             </div>
+            <video id="video" autoplay></video>
             <div class="container-text">
                 <div class="text">
-                    <h2>Aquí podrás <br> crear tus propios <span>GIFOS</span></h2>
-                    <p>¡Crea tu propio GIFO en sólo 3 pasos!</p> 
-                    <p>(sólo necesitas una cámara para grabar un video)</p>
+                    <h2 id="text-h2">Aquí podrás <br> crear tus propios <span>GIFOS</span></h2>
+                    <p id="text-p">¡Crea tu propio GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video) </p>  
                 </div>
             </div>
             <div class="bottom">
@@ -64,22 +64,36 @@
         </div>
     </div>
     <div class="camera">
-        <img src="./images/camara.svg" alt="camera">
-        <img src="./images/element-luz-camara.svg" alt="luz">
+        <img id="light-camera" class="img-camera" src="./images/camara.svg" alt="camera">
+        <img id="night-camera" class="img-camera" src="./images/camara-modo-noc.svg" alt="camera">
+        <img id="img-luz" src="./images/element-luz-camara.svg" alt="luz">
     </div>
     <div id="container-numbers">
         <div class="numbers">
-            <div class="number">1</div>
-            <div class="number">2</div>
-            <div class="number">3</div>
+            <div id="one" class="number">1</div>
+            <div id="two" class="number">2</div>
+            <div id="three" class="number">3</div>
+        </div>
+    </div>
+    <div id="second">
+        <div id="time-second">
+            <div id="repeat">
+                <p id="repeat">REPETIR CAPTURA</p>
+            </div>
+            <div class="time">
+                <span id="hours">00:</span>
+                <span id="minutes">00:</span>
+                <span id="seconds">00</span> 
+            </div>            
         </div>
     </div>
     <div class="movie">
-        <img class="img-movie" src="./images/pelicula.svg" alt="movie">
+        <img id="light-movie" class="img-movie" src="./images/pelicula.svg" alt="movie">
+        <img id="night-movie" class="img-movie" src="./images/pelicula-modo-noc.svg" alt="movie">
     </div>
     <div class="line"></div>
    
-    <button class="btn">COMENZAR</button>
+    <button id="start-btn" class="btn">COMENZAR</button>
     
     <!--Inicio del footer-->
     <footer>
@@ -97,8 +111,10 @@
         </div>
     </footer>
     <!--Fin del footer-->
-
     <script type="module" src="./js/createGifos.js"></script>
+    <script type="module" src="./js/nightMode.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    
 </body>
 
 </html>
